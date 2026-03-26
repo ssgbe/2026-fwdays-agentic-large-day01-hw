@@ -1,0 +1,57 @@
+.DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.envrc
+.eslintcache
+.history
+.idea
+.vercel
+.vscode
+.yarn
+*.log
+*.tgz
+build
+dist
+firebase
+logs
+node_modules
+npm-debug.log*
+package-lock.json
+yarn-debug.log*
+yarn-error.log*
+packages/excalidraw/types
+coverage
+dev-dist
+html
+meta*.json
+.claude
+
+# Lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Font files
+*.woff
+*.woff2
+*.ttf
+*.otf
+*.eot
+
+# Images & media
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.mp4
+*.mp3
+
+# Source maps
+*.map
+
+# Locales (translation files)
+packages/excalidraw/locales/
