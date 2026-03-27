@@ -95,7 +95,7 @@ yarn test:app -- --testNamePattern "should mutate"
 yarn test:coverage
 ```
 
-Coverage thresholds are enforced: lines ≥ 60%, branches ≥ 70%, functions ≥ 63%. The build fails if these are not met.
+Coverage thresholds are enforced: lines ≥ 60%, branches ≥ 70%, functions ≥ 63%, statements ≥ 60%. The build fails if these are not met.
 
 ## Linting & Formatting
 
@@ -109,7 +109,7 @@ yarn test:other       # format check (no fix)
 yarn test:typecheck   # TypeScript typecheck (tsc --noEmit)
 ```
 
-A Husky pre-commit hook runs `lint-staged` automatically on every commit — it applies `yarn fix` to staged files. You rarely need to run `yarn fix` manually unless you want to clean the whole tree.
+A Husky pre-commit hook runs `lint-staged` automatically on every commit. It operates directly on staged files: `eslint --max-warnings=0 --fix` for `*.{js,ts,tsx}` and `prettier --write` for `*.{css,scss,json,md,html,yml}`. The net effect is similar to `yarn fix`, but the mechanism differs — lint-staged invokes the tools directly rather than delegating to `yarn fix`. This matters if you customise the `yarn fix` scripts in `package.json`, since those changes will not affect the pre-commit hook. You rarely need to run `yarn fix` manually unless you want to clean the entire tree (not just staged files).
 
 ## Building
 
